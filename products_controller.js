@@ -38,7 +38,7 @@ module.exports = {
       const dbInstance = req.app.get('db');
       const { params, body } = req;
   
-      dbInstance.update_product([params.id, body.desc])
+      dbInstance.update_product([params.id, query.desc])
         .then(() => res.sendStatus(200))
         .catch(err => {
           res.status(500).send({ errorMessage: "Oops! Something went wrong." });
